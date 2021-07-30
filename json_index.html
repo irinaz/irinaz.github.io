@@ -12,6 +12,7 @@
     </head>
     <body>
         <div class = "page_wrapper">
+            <h1> Mapping Militants </h1>
             <!-- <div class = "side_wrapper">
                 <button onclick="closeNav('side_content')"></button>
                 <div class = "side_content">
@@ -60,7 +61,7 @@
                 relationships: []
             };
 
-            d3.json("olddata.json")
+            d3.json("https://dev-mapping-militants.pantheonsite.io/data/philippines")
             .then(function(data){
                 var todaysDate = new Date();
                 // big data read 
