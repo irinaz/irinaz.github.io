@@ -1,0 +1,48 @@
+body {
+    background-color: #d3d3d3;
+}
+
+.content_wrapper{
+    width: 100vw - 10;
+    height: 100vh - 10;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+
+#menu_wrapper{
+    background-color: white;
+}
+
+
+.activationCheckbox{
+    background-color: white;
+}
+
+
+.hide{
+    display: none;
+}
+
+.attack{
+    fill: orange;
+    stroke: yellow;
+}
+
+.leader{
+    fill: grey;
+    stroke: black;
+}
+
+.spl{
+    stroke: black;
+}
+
+.all{
+    stroke: blue;
+}
+
+.riv{
+    stroke: orange;
+}
+
