@@ -1,28 +1,34 @@
 body {
-    background-color: #d3d3d3;
+    background-color: white;
+}
+
+.menu_wrapper{
+    background-color: white;
 }
 
 .content_wrapper{
-    width: 100vw - 10;
     height: 100vh - 10;
-    overflow-x: scroll;
-    overflow-y: scroll;
+    width: 100vw - 10;
 }
 
-
-#menu_wrapper{
-    background-color: white;
+#svg{
+    background-color: lightgrey;
 }
-
-
-.activationCheckbox{
-    background-color: white;
-}
-
 
 .hide{
     display: none;
 }
+
+.node rect{
+    fill: white;
+    stroke: black;
+    opacity: .7;
+}
+
+.node text{
+    font-size: 16px;
+}
+
 
 .attack{
     fill: orange;
@@ -46,3 +52,25 @@ body {
     stroke: orange;
 }
 
+.timeline{
+    fill: white;
+    stroke: black;
+    marker-end: none;
+}
+
+#description_div{
+    background-color: white;
+    max-width: 300px;
+}
+
+.node_description{
+    border: 2px solid black;
+}
+
+.attack_description{
+    border: 2px solid orange;
+}
+
+.leader_description{
+    border: 2px solid grey;
+}

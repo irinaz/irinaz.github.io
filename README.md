@@ -1,3 +1,2 @@
-# d3_project_MMP
-
-This is a project I'm making to take a set of information regarding militant groups, their major events, and their relationships, and map it onto a timeline. 
+# litelordtrue.github.io
+this project maps the relationships of various political extremist groups over time using D3. 

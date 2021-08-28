@@ -1,47 +1,110 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-    <style>
-    </style>
-    <head>
-        <meta charset="utf-8">
-        <title>Mapping Militants Demo</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="/class_definitions.js"></script>
-        <script src="/external_javascript.js"></script>
-        <script src="https://d3js.org/d3.v7.min.js"></script>
-    </head>
-    <body>
-        <div class = "page_wrapper">
-            <!-- <div class = "side_wrapper">
-                <button onclick="closeNav('side_content')"></button>
-                <div class = "side_content">
-                    <p> hello </p>
-                </div>
-            </div> -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-            <div id = "content_wrapper" class = "content_wrapper">
-                <div id = "menu_wrapper" class = "menu_wrapper">
-                    <input class="activationCheckbox" type="checkbox" id = "nodeCheckbox" onclick="handleCheckbox('node', 'nodeCheckbox')" checked="true"> Toggle All Nodes
-                    <input class="activationCheckbox" type="checkbox" id = "inactiveCheckbox" onclick="handleCheckbox('inactive', 'inactiveCheckbox')" checked="true"> Toggle Inactive Nodes
-                    <input class="activationCheckbox" type="checkbox" id = "attackCheckbox" onclick="handleCheckbox('attack', 'attackCheckbox')" checked="true"> Toggle Attacks
-                    <input class="activationCheckbox" type="checkbox" id = "leaderCheckbox" onclick="handleCheckbox('leader', 'leaderCheckbox')" checked="true"> Toggle Leaders
+    <title>Integrated with Template</title>
 
-                    <input type="range" min = "0" max = "3" step = "1" value = "1" id = "zoomRange" oninput="handleSliderInput()"> Timeline Resolution: <span id="resolutionText"> 1 Year </span>
-                    <button onclick="handleResetInput()">Reset Pan</button>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
 
-                    <input id="domainInput"> <button onclick="handleDomainInput()">Change Domain</button>
-                    <button id="domainReset">Reset Domain</button>
-                </div>
-                <div id = "description_div">
-                    <span id="date_span"></span>
-                    <br><br>
-                    <span id="description_span"></span>
-                </div>
-                <div id = "main_timeline" class = "main_timeline"></div>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/dashboard/dashboard.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="/class_definitions.js"></script>
+    <script src="/external_javascript.js"></script>
+    <script type="text/javascript" src="/d3.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">North Ireland</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder=" " aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+
+            <div id = "menu_wrapper" class = "menu_wrapper">
+              <input class="activationCheckbox" type="checkbox" id = "nodeCheckbox" onclick="handleCheckbox('node', 'nodeCheckbox')" checked="true"> Toggle All Nodes
+              <input class="activationCheckbox" type="checkbox" id = "inactiveCheckbox" onclick="handleCheckbox('inactive', 'inactiveCheckbox')" checked="true"> Toggle Inactive Nodes
+              <input class="activationCheckbox" type="checkbox" id = "attackCheckbox" onclick="handleCheckbox('attack', 'attackCheckbox')" checked="true"> Toggle Attacks
+              <input class="activationCheckbox" type="checkbox" id = "leaderCheckbox" onclick="handleCheckbox('leader', 'leaderCheckbox')" checked="true"> Toggle Leaders
+
+              <input type="range" min = "0" max = "3" step = "1" value = "1" id = "zoomRange" oninput="handleSliderInput()"> Timeline Resolution: <span id="resolutionText"> 1 Year </span>
+              <button onclick="handleResetInput()">Reset Pan</button>
+
+              <input id="domainInput"> <button onclick="handleDomainInput()">Change Domain</button>
+              <button id="domainReset">Reset Domain</button>
+          </div>
+          <div id = "description_div">
+              <span id="date_span"></span>
+              <br><br>
+              <span id="description_span"></span>
+          </div>
+
+            <ul class="nav flex-column">
+                  <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <span data-feather="home"></span>
+                  home page link <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
+                   based on  bootstrap dashboard 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  controls here 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  controls here 
+                </a>
+              </li>
+            </ul>
+
+       
+   
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Map placeholder - name of country</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Map</button>
+                <button class="btn btn-sm btn-outline-secondary">Data</button>
+              </div>
+               
             </div>
-        </div>   
-        
-        <script type="text/javascript">
+          </div>
+
+
+          <!-- Aaron you can start coding here!!! -->
+          <div id="main_timeline" class="main_timeline">hello<p>hello again <br></p></div>
+
+              <script type="text/javascript">
             const url_obj = new URL(document.URL); // makes a url object
             const params_obj = new URLSearchParams(url_obj.search);
 
@@ -197,5 +260,26 @@
 
             })
         </script>
-    </body>
+
+          
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    
+  </body>
 </html>
