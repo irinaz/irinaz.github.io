@@ -45,15 +45,25 @@
           <div class="sidebar-sticky">
 
             <div id = "menu_wrapper" class = "menu_wrapper">
-              <input class="activationCheckbox" type="checkbox" id = "nodeCheckbox" onclick="handleCheckbox('node', 'nodeCheckbox')" checked="true"> Toggle All Nodes
+              <div class="form-check form-switch"> 
+
+                <input class="activationCheckbox form-check-input"
+                type="checkbox" id = "nodeCheckbox" onclick="handleCheckbox('node', 'nodeCheckbox')"
+                 checked="true"> Toggle All Nodes
+
+              </div>
               <input class="activationCheckbox" type="checkbox" id = "inactiveCheckbox" onclick="handleCheckbox('inactive', 'inactiveCheckbox')" checked="true"> Toggle Inactive Nodes
+              <br>
               <input class="activationCheckbox" type="checkbox" id = "attackCheckbox" onclick="handleCheckbox('attack', 'attackCheckbox')" checked="true"> Toggle Attacks
+              <br>
               <input class="activationCheckbox" type="checkbox" id = "leaderCheckbox" onclick="handleCheckbox('leader', 'leaderCheckbox')" checked="true"> Toggle Leaders
-
+              <br>
               <input type="range" min = "0" max = "3" step = "1" value = "1" id = "zoomRange" oninput="handleSliderInput()"> Timeline Resolution: <span id="resolutionText"> 1 Year </span>
+              
               <button onclick="handleResetInput()">Reset Pan</button>
-
-              <input id="domainInput"> <button onclick="handleDomainInput()">Change Domain</button>
+              <br>
+              <input id="domainInput"> 
+              <button onclick="handleDomainInput()">Change Domain</button>
               <button id="domainReset">Reset Domain</button>
           </div>
           <div id = "description_div">
