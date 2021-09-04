@@ -41,30 +41,21 @@
     <link href="dashboard.css" rel="stylesheet">
   </head>
   <body>
-    
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">Sign out</a>
-    </div>
-  </div>
-</header>
 
 <div class="container-fluid">
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div id = "menu_wrapper" class = "menu_wrapper">
+        
         <div class="form-check form-switch"> 
         <input class="form-check-input activationCheckbox" type="checkbox" id = "nodeCheckbox" onclick="handleCheckbox('node', 'nodeCheckbox')" checked="true"> 
         <label class="form-check-label"  for="nodeCheckbox"> Toggle All Nodes</label>
-      </div>              
-        <input class="activationCheckbox" type="checkbox" id = "inactiveCheckbox" onclick="handleCheckbox('inactive', 'inactiveCheckbox')" checked="true"> 
-        <label for="inactiveCheckbox"> Toggle Inactive Nodes</label><br> 
+      </div> 
+        
+        <div class="form-check form-switch">
+        <input class="activationCheckbox form-check-input" type="checkbox" id = "inactiveCheckbox" onclick="handleCheckbox('inactive', 'inactiveCheckbox')" checked="true"> 
+        <label for="inactiveCheckbox class="form-check-label"> Toggle Inactive Nodes</label> 
+        </div>                                                      
         
         
         <div class="form-check form-switch">
@@ -84,59 +75,25 @@
         <button onclick="handleDomainInput()">Change Domain</button>
         <button id="domainReset">Reset Domain</button>
     </div>
-
-
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-         <a class="nav-link active" aria-current="page" href="#">
-              <span data-feather="home"></span>
-              Example of link
-            </a>
-          </li>
-           
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              Reports
-            </a>
-          </li>
-        
-        </ul>
-
-         
-      </div>
+      
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div> <button onclick="hideSidebar()">Hide Sidebar</button> </div>
-      <script>
-function hideSidebar() {
-   var x =  ("sidebarMenu");
-  console.log(x)
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
+      <div> <button onclick="hideShowSidebar()">Hide Sidebar</button> </div>
+
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Name of MMP Group or Map</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Data Download</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Map</button>
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
+           
         </div>
       </div>
 
  <div class=" holder shadow border-1">
-      <div id = "description_div">
+      <div id = "description_div" class="card">
+        <div class="card-header"> Add name here </div>                                     
         <span id="date_span"></span>
         <br><br>
         <span id="description_span"></span>
